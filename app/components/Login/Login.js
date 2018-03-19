@@ -22,7 +22,7 @@ export default class Login extends React.Component {
           <Form>
             <Item floatingLabel last>
               <Label>Password</Label>
-              <Input  keyboardType="visible-password" secureTextEntry={true} value={state.password} onChangeText={value=>this.setState({'password':value})}/>
+              <Input secureTextEntry={true} value={state.password} onChangeText={value=>this.setState({'password':value})}/>
             </Item>
             <Button primary block style={styles.button} onPress={this.onSubmit.bind(this)}>
               {this.getLoginText()}
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   button: {
-    margin:10,
-    color:'#fff',
+    margin:10
   }
 });

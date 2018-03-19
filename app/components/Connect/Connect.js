@@ -16,22 +16,21 @@ export default class Connect extends React.Component {
   render() {
     var state = this.state;
     return (
-      <KeyboardAvoidingView>
-        <Container style={styles.container}>
-          <Content style={{flex:1,marginTop:'10%'}}>
-            <Form>
-              <Button primary block style={styles.button} onPress={this.onSubmit.bind(this)}>
-                {this.getButtonText()}
-              </Button>
-            </Form>
-          </Content>
-        </Container>
-      </KeyboardAvoidingView>
+      <Container style={styles.container}>
+        <Content style={{flex:1,marginTop:'10%'}}>
+          <Form>
+            <Button primary block style={styles.button} onPress={this.onSubmit.bind(this)}>
+              {this.getButtonText()}
+            </Button>
+          </Form>
+        </Content>
+      </Container>
     );
   }
   onSubmit() {
     this.setState({process:true});
     setTimeout(function () {
+      this.setState({process:false});
       this.props.navigation.navigate('Home');
     }.bind(this), 3000);
   }

@@ -16,7 +16,6 @@ export default class Home extends React.Component {
   render() {
     var state = this.state;
     return (
-      <KeyboardAvoidingView>
         <Container style={styles.container}>
           <Content style={{flex:1,marginTop:'10%'}}>
             <Form>
@@ -32,7 +31,6 @@ export default class Home extends React.Component {
             </Form>
           </Content>
         </Container>
-      </KeyboardAvoidingView>
     );
   }
   onSubmit() {
