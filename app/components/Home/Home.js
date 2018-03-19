@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native';
-import { Container, Header, Body, Title, Content, Form, Item, Input, Label, Button, Toast } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label, Button, Toast } from 'native-base';
 import { Spinner } from 'native-base';
 
-export default class Connect extends React.Component {
+export default class Home extends React.Component {
   static navigationOptions = {
-    header: null
+    headerTitle: "Home"
   }
   constructor(props) {
     super(props);
@@ -21,7 +21,13 @@ export default class Connect extends React.Component {
           <Content style={{flex:1,marginTop:'10%'}}>
             <Form>
               <Button primary block style={styles.button} onPress={this.onSubmit.bind(this)}>
-                {this.getButtonText()}
+                <Text> Register </Text>
+              </Button>
+              <Button primary block style={styles.button} onPress={this.onSubmit.bind(this)}>
+                <Text> Remove </Text>
+              </Button>
+              <Button primary block style={styles.button} onPress={this.onSubmit.bind(this)}>
+                <Text> Reset </Text>
               </Button>
             </Form>
           </Content>
@@ -32,7 +38,7 @@ export default class Connect extends React.Component {
   onSubmit() {
     this.setState({process:true});
     setTimeout(function () {
-      this.props.navigation.navigate('Home');
+      this.setState({process:false});
     }.bind(this), 3000);
   }
   getButtonText() {

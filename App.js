@@ -4,6 +4,7 @@ import { Root } from 'native-base';
 
 import LoginScreen from './app/components/Login/Login'
 import ConnectScreen from './app/components/Connect/Connect'
+import HomeScreen from './app/components/Home/Home'
 
 export default class App extends React.Component {
   async componentWillMount() {
@@ -27,5 +28,8 @@ const RootStack = StackNavigator({
   },
   Connect: {
     screen: ConnectScreen,
+  },
+  Home: {
+    screen: HomeScreen,
   },
 });
